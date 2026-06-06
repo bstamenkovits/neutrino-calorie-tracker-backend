@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neutrino"
+version = "0.1.0"
+description = "Neutrino"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+    { name = "Bela" },
+]
+dependencies = [
+    "supabase",
+    "fastapi",
+    "click",
+    "dotenv",
+]
+
+[project.scripts]
+wizard = "cli.main:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/neutrino"]
+
+#[tool.pytest.ini_options]
+#testpaths = ["tests"]
