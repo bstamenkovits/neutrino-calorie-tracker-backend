@@ -17,6 +17,7 @@ dependencies = [
     "fastapi",
     "click",
     "dotenv",
+    "pydantic",
 ]
 
 [project.scripts]
