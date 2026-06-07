@@ -33,4 +33,14 @@ Then run a new migration.
 supabase db push
 ```
 
-The 000 migration drops the entire schema and sets up the RLS policies a new. So no need to manually drop anything. 
+The 000 migration drops the entire schema and sets up the RLS policies a new. So no need to manually drop anything.
+
+Alternatively, the automated script can be used, run the following in the root directory: 
+```bash
+./supabase/reset_migrations.sh
+``` 
+
+Make sure the file is executable by first running 
+```bash 
+chmod +x myscript.sh
+```

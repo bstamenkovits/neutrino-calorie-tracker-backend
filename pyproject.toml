@@ -18,6 +18,7 @@ dependencies = [
     "click",
     "dotenv",
     "pydantic",
+    "textual",
 ]
 
 [project.scripts]

@@ -3,9 +3,11 @@ create table app.ingredients (
     id uuid not null,
     category_id uuid null,
     added_by_user_id uuid null,
+    date_added timestamp with time zone not null,
+    date_last_updated timestamp with time zone not null,
 
     name text not null,
-    calories_kcal double precision null,
+    calories_kcal double precision not null,
     fat_g double precision null,
     carbs_g double precision null,
     protein_g double precision null,
@@ -13,7 +15,7 @@ create table app.ingredients (
 
     -- primary & foreign keys
     constraint ingredients_pkey_id primary key (id),
-    constraint ingredients_fkey_category_id foreign key (category_id) references app.ingredients_categories (id) on update CASCADE on delete CASCADE,
+    constraint ingredients_fkey_category_id foreign key (category_id) references app.ingredient_categories (id) on update CASCADE on delete CASCADE,
     constraint ingredients_fkey_added_by_user_id foreign key (added_by_user_id) references auth.users (id) on update CASCADE on delete CASCADE,
 
     -- check valid nutritional values
