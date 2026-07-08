@@ -9,8 +9,8 @@ class Ingredient(BaseModel):
 
     category_id: Optional[uuid.UUID] = None
     added_by_user_id: Optional[uuid.UUID] = None
-    date_added: Optional[datetime.datetime] = Field(default_factory=datetime.datetime.now)
-    date_last_updated: Optional[datetime.datetime] = Field(default_factory=datetime.datetime.now)
+    date_created: Optional[datetime.datetime] = Field(default_factory=datetime.datetime.now)
+    date_modified: Optional[datetime.datetime] = Field(default_factory=datetime.datetime.now)
 
     name: str
     calories_kcal: float = Field(default=None, ge=0.0)

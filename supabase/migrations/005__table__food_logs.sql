@@ -2,11 +2,13 @@ create table app.food_logs (
     -- columns
     id uuid not null,
     user_id uuid null,
-    date_added timestamp with time zone not null,
-    meal_id uuid null,
-    ingredient_id uuid null,
-    serving_id uuid null,
+    meal_id uuid not null,
+    ingredient_id uuid not null,
+    serving_id uuid not null,
     quantity double precision not null,
+    consumed_on date not null,
+    date_created timestamp with time zone not null,
+    date_modified timestamp with time zone not null,
 
     -- primary and foreign keys
     constraint food_logs_pkey_id primary key (id),

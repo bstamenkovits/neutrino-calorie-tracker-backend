@@ -3,8 +3,8 @@ create table app.ingredients (
     id uuid not null,
     category_id uuid null,
     added_by_user_id uuid null,
-    date_added timestamp with time zone not null,
-    date_last_updated timestamp with time zone not null,
+    date_created timestamp with time zone not null,
+    date_modified timestamp with time zone not null,
 
     name text not null,
     calories_kcal double precision not null,

@@ -1,8 +1,8 @@
 create table app.ingredient_categories (
     id uuid not null,
     name text not null,
-    date_added timestamp with time zone not null,
-    date_last_updated timestamp with time zone not null,
+    date_created timestamp with time zone not null,
+    date_modified timestamp with time zone not null,
     constraint ingredients_categories_pkey_id primary key (id)
 ) TABLESPACE pg_default;
 

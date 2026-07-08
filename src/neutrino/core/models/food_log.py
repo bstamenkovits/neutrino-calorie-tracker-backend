@@ -1,16 +1,19 @@
 import uuid
+import datetime
+
 from typing import Optional
-from datetime import datetime
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class FoodLog(BaseModel):
-    id: uuid.UUID
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
     user_id: Optional[uuid.UUID] = None
-    date_added: datetime
     meal_id: Optional[uuid.UUID] = None
     ingredient_id: Optional[uuid.UUID] = None
     serving_id: Optional[uuid.UUID] = None
     quantity: float
+    consumed_on: datetime.datetime = Field(default_factory=datetime.datetime.now)
+    date_created: datetime.datetime = Field(default_factory=datetime.datetime.now)
+    date_modified: datetime.datetime = Field(default_factory=datetime.datetime.now)
 
 

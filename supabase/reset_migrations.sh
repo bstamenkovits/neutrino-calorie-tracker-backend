@@ -8,5 +8,6 @@ supabase migration repair --status reverted 002
 supabase migration repair --status reverted 003
 supabase migration repair --status reverted 004
 supabase migration repair --status reverted 005
+supabase migration repair --status reverted 006
 
 echo "All done!"

@@ -2,8 +2,10 @@ create table app.servings (
     -- columns
     id uuid not null,
     name text not null,
-    size_g double precision null,
-    ingredient_id uuid not null,
+    size_g double precision not null,
+    ingredient_id uuid null, -- null if global serving (e.g. grams)
+    date_created timestamp with time zone not null,
+    date_modified timestamp with time zone not null,
 
     -- primary and foreign keys
     constraint servings_pkey_id primary key (id),
