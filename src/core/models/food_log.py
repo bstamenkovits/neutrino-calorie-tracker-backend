@@ -12,7 +12,7 @@ class FoodLog(BaseModel):
     ingredient_id: Optional[uuid.UUID] = None
     serving_id: Optional[uuid.UUID] = None
     quantity: float
-    consumed_on: datetime.datetime = Field(default_factory=datetime.datetime.now)
+    consumed_on: datetime.date = Field(default_factory=datetime.date.today)
     date_created: datetime.datetime = Field(default_factory=datetime.datetime.now)
     date_modified: datetime.datetime = Field(default_factory=datetime.datetime.now)
 

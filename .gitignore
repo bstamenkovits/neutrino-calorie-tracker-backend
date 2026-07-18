@@ -222,3 +222,7 @@ __marimo__/
 
 # supabase
 .temp
+
+
+# local testing / sandbox
+__local.py
