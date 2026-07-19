@@ -130,3 +130,9 @@ def get_supabase_client(
 
     return client
 
+
+def login(email, password):
+    # public/anonymous client
+    client = create_client(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
+    return client.auth.sign_in_with_password(dict(email=email, password=password)).session
+

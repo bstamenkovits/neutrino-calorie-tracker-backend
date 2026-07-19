@@ -19,7 +19,7 @@ class LoginResponse(BaseModel):
 
 @router.post("/login")
 async def login(credentials: LoginRequest) -> LoginResponse:
-    session = auth.log_in(credentials.email, credentials.password)
+    session = auth.login(credentials.email, credentials.password)
 
     if session is None:
         raise HTTPException(status_code=401, detail="Invalid email or password")
