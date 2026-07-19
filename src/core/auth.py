@@ -79,7 +79,7 @@ def verify_token(access_token: str = Depends(get_token)) -> dict[str, Any]:
 
 @dataclass
 class UserData:
-    user_id: str
+    id: str
     email: str
     role: str
 
@@ -95,7 +95,7 @@ def get_user_data(verified_claims: dict[str, Any] = Depends(verify_token)) -> Us
         UserData: the user data
     """
     return UserData(
-        user_id=verified_claims["sub"],
+        id=verified_claims["sub"],
         email=verified_claims["email"],
         role=verified_claims["role"],
     )
